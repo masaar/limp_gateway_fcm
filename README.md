@@ -14,9 +14,10 @@ This repo is a [LIMP](https://github.com/masaar/limp) [Package](https://github.c
    2. `message_title`: Message title. Type `str`.
    3. `message_body`: Message body. Type `str`.
    4. `data_message`: Additional payload data to be sent with the message. Type `dict`.
-4. Use FCM gateway using LIMP Gateway Controller:
+4. FCM gateway accepts optional arg, namely `fcm_auth`, replicating `fcm` value in `vars Config Attr` for dynamic FCM API credentials.
+5. Use FCM gateway using LIMP Gateway Controller:
 ```python
 from gateway import Gateway
 
-Gateway.send('fcm', registration_id=registration_id, message_title=message_title, message_body=message_body, data_message=data_message)
+Gateway.send(gateway='fcm', registration_id=registration_id, message_title=message_title, message_body=message_body, data_message=data_message)
 ```
